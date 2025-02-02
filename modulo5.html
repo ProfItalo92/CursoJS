@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 5: Funções e Escopo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 5: Funções e Escopo</h1>
+            <p>Vamos aprender sobre funções e escopo em JavaScript!</p>
+        </div>
+        <div id="module-content">
+            <h3>Introdução às Funções</h3>
+            <p>As funções são um dos pilares da programação, permitindo que você agrupe um conjunto de instruções e as execute de forma reutilizável. No JavaScript, as funções podem ser declaradas de diversas maneiras e têm diferentes escopos, o que permite flexibilidade no seu uso. Este módulo cobrirá os conceitos fundamentais sobre funções e como o escopo afeta o comportamento do código.</p>
+
+            <h3>1. Funções em JavaScript</h3>
+            <p>Uma função é um bloco de código projetado para realizar uma tarefa específica. Em JavaScript, as funções são criadas utilizando a palavra-chave <code>function</code>, seguidas do nome da função e um conjunto de parênteses contendo os parâmetros.</p>
+
+            <pre><code>
+                function saudacao() {
+                    console.log("Olá, mundo!");
+                }
+                saudacao();  // Chama a função
+            </code></pre>
+
+            <p>O exemplo acima mostra uma função chamada <code>saudacao</code> que não recebe parâmetros e simplesmente imprime uma mensagem no console.</p>
+
+            <h3>2. Parâmetros e Argumentos</h3>
+            <p>Funções podem receber parâmetros, que são valores passados para a função na hora de sua execução. Os parâmetros permitem que a função seja mais flexível e reutilizável com diferentes entradas.</p>
+
+            <pre><code>
+                function somar(a, b) {
+                    return a + b;
+                }
+                console.log(somar(3, 4));  // Resultado: 7
+            </code></pre>
+
+            <p>No exemplo acima, a função <code>somar</code> recebe dois parâmetros, <code>a</code> e <code>b</code>, e retorna a soma desses valores.</p>
+
+            <h3>3. Retorno de Funções</h3>
+            <p>Funções podem retornar valores, o que significa que elas podem enviar resultados de volta para quem as chamou. Isso permite que você utilize os valores calculados em outros pontos do código.</p>
+
+            <pre><code>
+                function multiplicar(a, b) {
+                    return a * b;
+                }
+                let resultado = multiplicar(5, 2);
+                console.log(resultado);  // Resultado: 10
+            </code></pre>
+
+            <h3>4. Funções Anônimas e Arrow Functions</h3>
+            <p>Funções podem ser anônimas, ou seja, sem nome, e usadas em expressões. Além disso, a partir do ECMAScript 6, temos as <i>arrow functions</i> (funções de seta), uma forma mais concisa de escrever funções em JavaScript.</p>
+
+            <pre><code>
+                let soma = (a, b) => a + b;
+                console.log(soma(5, 3));  // Resultado: 8
+            </code></pre>
+
+            <p>O exemplo acima mostra uma função de seta que soma dois números.</p>
+
+            <h3>5. Escopo em JavaScript</h3>
+            <p>Escopo é a área do programa onde uma variável ou função pode ser acessada. JavaScript tem dois tipos principais de escopo: global e local.</p>
+
+            <h4>Escopo Global</h4>
+            <p>Variáveis e funções declaradas fora de qualquer função têm escopo global e podem ser acessadas em qualquer parte do programa.</p>
+
+            <pre><code>
+                let x = 10;  // Variável com escopo global
+                function exibir() {
+                    console.log(x);  // Acessa a variável global
+                }
+                exibir();  // Resultado: 10
+            </code></pre>
+
+            <h4>Escopo Local</h4>
+            <p>Variáveis e funções declaradas dentro de uma função têm escopo local e só podem ser acessadas dentro dessa função.</p>
+
+            <pre><code>
+                function exemplo() {
+                    let y = 20;  // Variável com escopo local
+                    console.log(y);  // Acessa a variável local
+                }
+                exemplo();  // Resultado: 20
+            </code></pre>
+
+            <h3>6. Escopo de Bloco</h3>
+            <p>Com a introdução do <code>let</code> e <code>const</code> no ECMAScript 6, as variáveis passaram a ter escopo de bloco, ou seja, elas ficam acessíveis apenas dentro de estruturas de controle como loops e condicionais.</p>
+
+            <pre><code>
+                if (true) {
+                    let z = 30;  // Variável com escopo de bloco
+                    console.log(z);  // Acessa a variável dentro do bloco
+                }
+                // console.log(z);  // Erro! Não pode acessar z fora do bloco
+            </code></pre>
+
+            <h3>7. Closures</h3>
+            <p>Closures são funções que "lembram" o escopo no qual foram criadas, mesmo quando chamadas fora desse escopo. Eles permitem acessar variáveis de uma função externa, mesmo após a execução dessa função ter terminado.</p>
+
+            <pre><code>
+                function externa() {
+                    let a = 10;
+                    return function interna() {
+                        console.log(a);  // Acessa a variável da função externa
+                    };
+                }
+                let closure = externa();
+                closure();  // Resultado: 10
+            </code></pre>
+
+            <h3>8. Exemplos Práticos de Funções e Escopo</h3>
+            <p>Aqui estão alguns exemplos mais complexos de como usar funções e escopo:</p>
+
+            <pre><code>
+                function calcularPreco(preco, desconto) {
+                    return preco - (preco * desconto);
+                }
+                let precoFinal = calcularPreco(100, 0.2);
+                console.log(precoFinal);  // Resultado: 80
+            </code></pre>
+
+            <h3>9. Desafios e Exercícios</h3>
+            <p>Agora, é hora de testar o que você aprendeu! Resolva os desafios abaixo:</p>
+            <ul>
+                <li>Crie uma função que receba um número e retorne seu fatorial.</li>
+                <li>Implemente uma função que verifique se uma string é um palíndromo.</li>
+                <li>Crie uma função que calcule a soma de todos os números de um array.</li>
+            </ul>
+
+            <h3>10. Conclusão</h3>
+            <p>Funções e escopo são conceitos fundamentais em JavaScript. Com elas, você pode modularizar seu código, reutilizar lógicas e controlar o acesso a variáveis em diferentes partes do seu programa. Agora, é hora de testar o que você aprendeu com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 5</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. O que é uma função em JavaScript?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">Uma estrutura de controle</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">Um bloco de código reutilizável</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">Uma variável</button>
+
+                <p>2. O que a palavra-chave <code>return</code> faz em uma função?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">Finaliza a execução da função</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">Retorna um valor para quem chamou a função</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">Nada</button>
+
+                <p>3. O que são closures?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">Funções que podem acessar variáveis de funções externas</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">Funções que não recebem parâmetros</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">Funções sem escopo</button>
+
+                <p>4. O que acontece se você tentar acessar uma variável local fora do escopo onde ela foi declarada?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Erro! A variável não está acessível</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Nada, ela é acessível de qualquer parte do código</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Ela tem seu valor retornado automaticamente</button>
+
+                <p>5. O que significa escopo de bloco em JavaScript?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">Uma variável é acessível apenas dentro do bloco onde foi declarada</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">Uma variável é acessível em todo o código</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">Uma variável pode ser acessada apenas dentro de funções</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo5.js"></script>
+</body>
+</html>

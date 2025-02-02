@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 1: História do JavaScript</h1>
+            <p>Preparado para aprender a história do JavaScript e sua evolução? Vamos começar!</p>
+        </div>
+        <div id="module-content">
+            <h3>O que é JavaScript?</h3>
+            <p>JavaScript é uma linguagem de programação que foi criada para dar interatividade às páginas da web. Com o tempo, JavaScript se tornou uma das linguagens mais populares do mundo da programação.</p>
+
+            <h3>História do JavaScript</h3>
+            <p>Em 1995, a empresa Netscape contratou Brendan Eich para trabalhar em um projeto que envolvia a criação de uma linguagem de script para interatividade no navegador. O projeto foi realizado de forma rápida, e Eich escreveu o código inicial da linguagem em apenas 10 dias. A linguagem foi chamada inicialmente de "Mocha", depois foi renomeada para "LiveScript", e por fim, "JavaScript" devido a uma parceria com a Sun Microsystems, que possuía o Java.</p>
+
+            <p>O principal objetivo do JavaScript na época era permitir que páginas da web tivessem conteúdo dinâmico. Isso permitiu que desenvolvedores web implementassem funcionalidades como a validação de formulários, animações e a interação com o usuário sem a necessidade de recarregar a página inteira.</p>
+
+            <h3>Versões e Evolução do JavaScript</h3>
+            <ul>
+                <li><b>ECMAScript 3 (1999)</b> - Introdução de funções como try-catch e melhorias no suporte a expressões regulares.</li>
+                <li><b>ECMAScript 5 (2009)</b> - Novas funcionalidades como "strict mode", métodos adicionais para manipulação de arrays e objetos.</li>
+                <li><b>ECMAScript 6 (2015)</b> - ES6 trouxe grandes melhorias como classes, módulos, let e const, funções de flecha e muito mais.</li>
+                <li><b>ECMAScript 2016 em diante</b> - Atualizações contínuas com recursos como async/await, operadores de propagação e novos métodos.</li>
+            </ul>
+
+            <p>Hoje, JavaScript está presente em praticamente todos os sites e se expandiu além do navegador, com a popularização de frameworks como Node.js, que permite o uso de JavaScript no lado do servidor.</p>
+
+            <h3>JavaScript Hoje</h3>
+            <p>JavaScript é uma das linguagens mais utilizadas no mundo. Sua versatilidade e suporte para desenvolvimento front-end e back-end garantem seu lugar como uma das linguagens mais importantes da indústria de software.</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 1</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Quem foi o criador do JavaScript?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">Brendan Eich</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">Tim Berners-Lee</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">Mark Zuckerberg</button>
+
+                <p>2. Qual foi o primeiro nome dado ao JavaScript?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">Mocha</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">LiveScript</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">JavaScript</button>
+
+                <p>3. Quando o JavaScript foi formalizado?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">1997</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">1995</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">2001</button>
+
+                <p>4. O que o ECMAScript representa?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">É uma versão do JavaScript</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">É o nome de uma linguagem concorrente</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">É um protocolo de segurança</button>
+
+                <p>5. Qual versão do ECMAScript introduziu as classes?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">ECMAScript 3</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">ECMAScript 5</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">ECMAScript 6</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

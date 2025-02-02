@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 4: Laços de Repetição (for, while)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 4: Laços de Repetição (for, while)</h1>
+            <p>Vamos aprender sobre os laços de repetição em JavaScript, como os laços <code>for</code>, <code>while</code> e <code>do-while</code>!</p>
+        </div>
+        <div id="module-content">
+            <h3>Introdução aos Laços de Repetição</h3>
+            <p>Laços de repetição são estruturas de controle essenciais na programação. Eles permitem que você execute um bloco de código várias vezes de maneira eficiente. No JavaScript, os principais laços de repetição são <code>for</code>, <code>while</code> e <code>do-while</code>. Cada um desses laços tem características específicas que os tornam úteis em diferentes cenários.</p>
+
+            <h3>1. O Laço `for`</h3>
+            <p>O laço <code>for</code> é usado quando sabemos o número exato de vezes que queremos executar um bloco de código. Sua sintaxe é a seguinte:</p>
+
+            <pre><code>
+                for (inicialização; condição; incremento) {
+                    // Bloco de código a ser repetido
+                }
+            </code></pre>
+
+            <p>Exemplo básico de um laço <code>for</code>:</p>
+            <pre><code>
+                for (let i = 0; i < 5; i++) {
+                    console.log(i);
+                }
+            </code></pre>
+            <p>Este código vai imprimir os números de 0 a 4, pois a condição <code>i < 5</code> é verdadeira enquanto <code>i</code> for menor que 5.</p>
+
+            <h3>2. O Laço `while`</h3>
+            <p>O laço <code>while</code> é usado quando não sabemos exatamente o número de vezes que o código será executado, mas queremos que o código continue enquanto uma condição for verdadeira.</p>
+
+            <pre><code>
+                while (condição) {
+                    // Bloco de código a ser repetido
+                }
+            </code></pre>
+
+            <p>Exemplo de uso do laço <code>while</code>:</p>
+            <pre><code>
+                let i = 0;
+                while (i < 5) {
+                    console.log(i);
+                    i++;
+                }
+            </code></pre>
+            <p>Neste exemplo, o código vai imprimir os números de 0 a 4, pois a condição <code>i < 5</code> será verificada antes de cada iteração.</p>
+
+            <h3>3. O Laço `do-while`</h3>
+            <p>O laço <code>do-while</code> é semelhante ao <code>while</code>, mas a condição é verificada após a execução do bloco de código. Isso significa que o código dentro do laço será executado pelo menos uma vez.</p>
+
+            <pre><code>
+                do {
+                    // Bloco de código a ser repetido
+                } while (condição);
+            </code></pre>
+
+            <p>Exemplo de uso do laço <code>do-while</code>:</p>
+            <pre><code>
+                let i = 0;
+                do {
+                    console.log(i);
+                    i++;
+                } while (i < 5);
+            </code></pre>
+            <p>Assim como o <code>while</code>, este código também imprime os números de 0 a 4, mas garante que o bloco de código seja executado pelo menos uma vez, mesmo que a condição já seja falsa.</p>
+
+            <h3>4. Controle de Fluxo dentro dos Laços</h3>
+            <p>Dentro de um laço, podemos usar as palavras-chave <code>break</code> e <code>continue</code> para controlar o fluxo de execução.</p>
+            <ul>
+                <li><b>break:</b> Interrompe a execução do laço imediatamente.</li>
+                <li><b>continue:</b> Pula a iteração atual e continua com a próxima.</li>
+            </ul>
+
+            <pre><code>
+                for (let i = 0; i < 10; i++) {
+                    if (i === 5) {
+                        break; // Interrompe o laço quando i for igual a 5
+                    }
+                    console.log(i);
+                }
+            </code></pre>
+
+            <p>O código acima vai imprimir os números de 0 a 4, pois o laço é interrompido quando <code>i</code> é igual a 5.</p>
+
+            <pre><code>
+                for (let i = 0; i < 10; i++) {
+                    if (i === 5) {
+                        continue; // Pula a iteração quando i for igual a 5
+                    }
+                    console.log(i);
+                }
+            </code></pre>
+
+            <p>Este código vai imprimir os números de 0 a 9, exceto 5, pois a iteração é pulada quando <code>i === 5</code>.</p>
+
+            <h3>5. Exemplos Práticos de Laços</h3>
+            <p>Abaixo estão alguns exemplos práticos do uso de laços para resolver problemas do cotidiano:</p>
+
+            <pre><code>
+                // Somar os números de 1 a 10
+                let soma = 0;
+                for (let i = 1; i <= 10; i++) {
+                    soma += i;
+                }
+                console.log(soma);  // Resultado: 55
+            </code></pre>
+
+            <pre><code>
+                // Encontrar números pares entre 1 e 20
+                for (let i = 1; i <= 20; i++) {
+                    if (i % 2 === 0) {
+                        console.log(i);  // Imprime números pares
+                    }
+                }
+            </code></pre>
+
+            <h3>6. Desafios e Exercícios</h3>
+            <p>Agora que você já conhece os laços de repetição, é hora de colocar o conhecimento em prática! Resolva os desafios abaixo:</p>
+            <ul>
+                <li>Crie um laço que imprima os números de 1 a 100, mas substitua os múltiplos de 3 por "Fizz" e os múltiplos de 5 por "Buzz". Para os números que são múltiplos de ambos, imprima "FizzBuzz".</li>
+                <li>Imprima a tabuada de um número inserido pelo usuário.</li>
+            </ul>
+
+            <h3>7. Conclusão</h3>
+            <p>Os laços de repetição são ferramentas poderosas para automatizar tarefas repetitivas e realizar operações em grandes conjuntos de dados. Agora, você está pronto para testar o que aprendeu com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 4</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual laço é usado quando sabemos o número de repetições de antemão?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">for</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">while</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">do-while</button>
+
+                <p>2. O que a palavra-chave <code>continue</code> faz dentro de um laço?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">Interrompe o laço</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">Pula a iteração atual</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">Continua a execução normal</button>
+
+                <p>3. Em um laço <code>while</code>, onde a condição é verificada?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">Antes de executar o bloco de código</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">Após executar o bloco de código</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">Nunca é verificada</button>
+
+                <p>4. Qual a diferença entre o laço <code>while</code> e o laço <code>do-while</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">A condição é verificada no final no do-while</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Não há diferença</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">O while nunca executa o bloco de código</button>
+
+                <p>5. O que acontece se não houver um <code>break</code> em um laço <code>switch</code>?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">O código continuará executando as próximas opções</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">O código será interrompido</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">Nada acontece</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo4.js"></script>
+</body>
+</html>

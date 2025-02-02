@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 7: Manipulação de DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 7: Manipulação de DOM</h1>
+            <p>Vamos aprender sobre como manipular o DOM (Document Object Model) com JavaScript!</p>
+        </div>
+        <div id="module-content">
+            <h3>Introdução ao DOM</h3>
+            <p>O DOM (Document Object Model) é a interface que permite a interação entre o JavaScript e a estrutura HTML de uma página. Com o DOM, podemos acessar, modificar, adicionar ou excluir elementos da página, além de responder a interações do usuário, como cliques e digitação.</p>
+
+            <h3>1. O que é o DOM?</h3>
+            <p>O DOM é uma representação em árvore da estrutura de um documento HTML. Cada elemento, atributo e texto no HTML é representado como um nó no DOM, e podemos usar JavaScript para manipular esses nós.</p>
+
+            <pre><code>
+                // Exemplo básico de acesso ao DOM
+                let titulo = document.getElementById('titulo');
+                console.log(titulo.innerText);  // Exibe o conteúdo do título
+            </code></pre>
+
+            <h3>2. Como Funciona o DOM em JavaScript</h3>
+            <p>Quando você carrega uma página web no navegador, o navegador cria uma árvore DOM, que é uma estrutura de dados que representa todos os elementos HTML da página. Com JavaScript, você pode acessar e manipular essa árvore para alterar a aparência e o comportamento da página.</p>
+
+            <h3>3. Selecionando Elementos do DOM</h3>
+            <p>Para manipular os elementos no DOM, você precisa selecioná-los primeiro. Existem várias maneiras de selecionar elementos:</p>
+            <ul>
+                <li><b>document.getElementById(id):</b> Seleciona um único elemento pelo seu ID.</li>
+                <li><b>document.getElementsByClassName(class):</b> Seleciona todos os elementos que possuem a classe especificada.</li>
+                <li><b>document.querySelector(selector):</b> Seleciona o primeiro elemento que corresponde ao seletor CSS fornecido.</li>
+                <li><b>document.querySelectorAll(selector):</b> Seleciona todos os elementos que correspondem ao seletor CSS fornecido.</li>
+            </ul>
+
+            <pre><code>
+                // Selecionando um elemento pelo ID
+                let titulo = document.getElementById('titulo');
+                console.log(titulo);
+
+                // Selecionando elementos por classe
+                let paragrafos = document.getElementsByClassName('paragrafo');
+                console.log(paragrafos);
+            </code></pre>
+
+            <h3>4. Manipulando Conteúdo e Atributos</h3>
+            <p>Uma vez que você tenha selecionado um elemento, pode modificar seu conteúdo ou atributos. O conteúdo pode ser acessado ou modificado através de propriedades como <code>innerHTML</code>, <code>innerText</code> ou <code>value</code> (para campos de formulário).</p>
+
+            <pre><code>
+                // Modificando o conteúdo de um elemento
+                let titulo = document.getElementById('titulo');
+                titulo.innerText = "Novo Título";
+
+                // Modificando o valor de um campo de entrada
+                let input = document.getElementById('nome');
+                input.value = "Novo Nome";
+            </code></pre>
+
+            <h3>5. Eventos no DOM</h3>
+            <p>Os eventos são ações que ocorrem na página, como cliques, digitação ou rolagem, e podemos configurar manipuladores de eventos para executar código quando esses eventos ocorrem.</p>
+
+            <pre><code>
+                // Adicionando um evento de clique
+                let botao = document.getElementById('meuBotao');
+                botao.addEventListener('click', function() {
+                    alert("Botão clicado!");
+                });
+            </code></pre>
+
+            <h3>6. Alterando Estilos com JavaScript</h3>
+            <p>Você pode alterar o estilo de um elemento HTML diretamente através do DOM, usando a propriedade <code>style</code>.</p>
+
+            <pre><code>
+                // Alterando o estilo de um elemento
+                let titulo = document.getElementById('titulo');
+                titulo.style.color = "red";
+                titulo.style.fontSize = "24px";
+            </code></pre>
+
+            <h3>7. Criando e Removendo Elementos Dinamicamente</h3>
+            <p>Você pode adicionar novos elementos à página ou remover elementos existentes com JavaScript. Para criar um novo elemento, use o método <code>createElement</code>, e para adicionar o elemento à página, use <code>appendChild</code>.</p>
+
+            <pre><code>
+                // Criando um novo parágrafo e adicionando à página
+                let paragrafo = document.createElement('p');
+                paragrafo.innerText = "Este é um novo parágrafo!";
+                document.body.appendChild(paragrafo);
+            </code></pre>
+
+            <p>Para remover um elemento, você pode usar o método <code>removeChild</code>:</p>
+
+            <pre><code>
+                let paragrafo = document.getElementById('paragrafo');
+                document.body.removeChild(paragrafo);
+            </code></pre>
+
+            <h3>8. Exemplos Práticos de Manipulação do DOM</h3>
+            <p>Aqui estão alguns exemplos práticos para você testar:</p>
+
+            <pre><code>
+                // Alterar o título da página com um clique
+                let botao = document.getElementById('meuBotao');
+                botao.addEventListener('click', function() {
+                    let titulo = document.getElementById('titulo');
+                    titulo.innerText = "Você clicou no botão!";
+                });
+            </code></pre>
+
+            <h3>9. Desafios e Exercícios</h3>
+            <p>Agora, vamos testar o que você aprendeu com os seguintes desafios:</p>
+            <ul>
+                <li>Crie um botão que, quando clicado, altere o conteúdo de um parágrafo para "Você clicou no botão!"</li>
+                <li>Crie um formulário que, ao ser submetido, altere o texto de um parágrafo com o nome digitado no campo de entrada.</li>
+                <li>Adicione um novo item à lista de compras, criando um elemento <code>li</code> e adicionando-o à lista.</li>
+            </ul>
+
+            <h3>10. Conclusão</h3>
+            <p>A manipulação do DOM é uma parte fundamental do desenvolvimento web interativo. Agora que você conhece as principais técnicas de manipulação de DOM, é hora de testar seu conhecimento com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 7</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual método você usa para acessar um elemento pelo seu ID?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">getElementById()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">getElementsByClassName()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">querySelectorAll()</button>
+
+                <p>2. Como você altera o texto de um elemento?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">usando innerText</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">usando textContent</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">usando value</button>
+
+                <p>3. Como você adiciona um novo elemento à página?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">createElement()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">appendChild()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">removeChild()</button>
+
+                <p>4. O que acontece quando você usa <code>removeChild()</code> em um elemento?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Remove o elemento da página</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Altera o conteúdo do elemento</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Adiciona um novo elemento</button>
+
+                <p>5. Como você responde a eventos no DOM?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">Com o método addEventListener()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">Com o método setAttribute()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">Com o método createElement()</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para retornar ao Módulo 1 -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToModule1()">Voltar para o Módulo 1</button>
+    </div>
+
+    <script src="modulo7.js"></script>
+</body>
+</html>

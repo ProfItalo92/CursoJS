@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 3: Estruturas Condicionais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 3: Estruturas Condicionais</h1>
+            <p>Vamos aprender sobre as estruturas condicionais em JavaScript!</p>
+        </div>
+        <div id="module-content">
+            <h3>O que são Estruturas Condicionais?</h3>
+            <p>Estruturas condicionais são blocos de código que executam diferentes ações dependendo de uma condição verdadeira ou falsa. Elas são fundamentais para a lógica de programação e permitem que o fluxo de execução do código seja alterado com base em decisões.</p>
+
+            <h3>1. A Estrutura `if`</h3>
+            <p>A estrutura `if` permite que você execute um bloco de código se uma condição for verdadeira. O código dentro do `if` será executado apenas quando a condição definida for verdadeira.</p>
+
+            <pre><code>
+                let idade = 18;
+                if (idade >= 18) {
+                    console.log("Você é maior de idade.");
+                }
+            </code></pre>
+
+            <p>No exemplo acima, se a variável `idade` for maior ou igual a 18, o programa exibirá "Você é maior de idade". Se a condição for falsa, o código dentro do `if` não será executado.</p>
+
+            <h3>2. A Estrutura `else`</h3>
+            <p>O `else` permite que você defina um bloco de código alternativo, que será executado caso a condição do `if` seja falsa.</p>
+
+            <pre><code>
+                let idade = 16;
+                if (idade >= 18) {
+                    console.log("Você é maior de idade.");
+                } else {
+                    console.log("Você é menor de idade.");
+                }
+            </code></pre>
+
+            <p>Se a condição do `if` for falsa, o código dentro do `else` será executado.</p>
+
+            <h3>3. Estruturas `else if`</h3>
+            <p>Você pode usar o `else if` para testar várias condições diferentes. Caso a condição do `if` seja falsa, o código verifica as condições do `else if` e, se alguma delas for verdadeira, o bloco correspondente será executado.</p>
+
+            <pre><code>
+                let nota = 75;
+                if (nota >= 90) {
+                    console.log("Nota A");
+                } else if (nota >= 70) {
+                    console.log("Nota B");
+                } else if (nota >= 50) {
+                    console.log("Nota C");
+                } else {
+                    console.log("Nota D");
+                }
+            </code></pre>
+
+            <p>No exemplo acima, o programa verifica as condições em sequência até encontrar uma que seja verdadeira.</p>
+
+            <h3>4. Operadores Lógicos</h3>
+            <p>Os operadores lógicos permitem combinar múltiplas condições. Os mais comuns são:</p>
+            <ul>
+                <li><b>AND (&&):</b> Retorna verdadeiro se ambas as condições forem verdadeiras.</li>
+                <li><b>OR (||):</b> Retorna verdadeiro se pelo menos uma das condições for verdadeira.</li>
+                <li><b>NOT (!):</b> Inverte o valor lógico da condição.</li>
+            </ul>
+
+            <pre><code>
+                let idade = 20;
+                let temCarro = true;
+                if (idade >= 18 && temCarro) {
+                    console.log("Você pode dirigir.");
+                } else {
+                    console.log("Você não pode dirigir.");
+                }
+            </code></pre>
+
+            <p>Esse exemplo usa o operador `&&` para verificar se ambas as condições são verdadeiras.</p>
+
+            <h3>5. A Estrutura `switch`</h3>
+            <p>A estrutura `switch` é uma forma de simplificar múltiplos testes condicionais. Ela verifica uma variável contra várias opções e executa o código correspondente à primeira condição que for verdadeira.</p>
+
+            <pre><code>
+                let dia = "domingo";
+                switch (dia) {
+                    case "segunda-feira":
+                        console.log("Hoje é segunda-feira.");
+                        break;
+                    case "domingo":
+                        console.log("Hoje é domingo.");
+                        break;
+                    default:
+                        console.log("Não é um dia da semana.");
+                }
+            </code></pre>
+
+            <p>O `switch` é útil quando você tem várias opções e deseja comparar uma variável com diferentes valores possíveis.</p>
+
+            <h3>6. Exemplos Práticos com `if`, `else`, `switch`</h3>
+            <p>Agora que você já conhece as estruturas condicionais, vamos ver alguns exemplos práticos de como usá-las:</p>
+
+            <pre><code>
+                // Exemplo 1: Verificando a idade
+                let idade = 21;
+                if (idade < 18) {
+                    console.log("Você é menor de idade.");
+                } else {
+                    console.log("Você é maior de idade.");
+                }
+
+                // Exemplo 2: Definindo a classificação de uma nota
+                let nota = 85;
+                switch (true) {
+                    case (nota >= 90):
+                        console.log("Nota A");
+                        break;
+                    case (nota >= 70):
+                        console.log("Nota B");
+                        break;
+                    case (nota >= 50):
+                        console.log("Nota C");
+                        break;
+                    default:
+                        console.log("Nota D");
+                }
+            </code></pre>
+
+            <h3>7. Conclusão</h3>
+            <p>As estruturas condicionais são essenciais para o controle de fluxo em programas. Com elas, você pode escrever programas dinâmicos e que tomam decisões baseadas em dados de entrada. Agora que você aprendeu os conceitos básicos, é hora de testar seus conhecimentos com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 3</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual estrutura condicional é usada para testar múltiplas opções?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">if</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">else</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">switch</button>
+
+                <p>2. Qual operador lógico retorna verdadeiro se pelo menos uma das condições for verdadeira?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">AND</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">OR</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">NOT</button>
+
+                <p>3. Qual é a sintaxe correta de um bloco `else`?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">else { ... }</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">else if { ... }</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">else: ...</button>
+
+                <p>4. O que o comando `break` faz dentro de um `switch`?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">Termina o bloco de código</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Continua para o próximo case</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Exibe o valor de `switch`</button>
+
+                <p>5. Qual é o valor retornado pela expressão `false || true`?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">true</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">false</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">undefined</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo3.js"></script>
+</body>
+</html>

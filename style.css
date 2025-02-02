@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4EA68D;
+    color: #102026;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+#game-container {
+    background-color: #4EA68D;
+    width: calc(100% - 2cm); /* Largura total com espaçamento de 1cm nas laterais */
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    overflow-y: auto;
+    height: 90%;
+    margin: 0 1cm; /* Adiciona o espaçamento de 1cm nas laterais */
+}
+
+#header h1 {
+    font-size: 32px;
+    color: #102026;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 32px;
+    color: #102026;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #F2994B;
+    color: #102026;
+    border: none;
+    padding: 20px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #A67C58;
+}
+
+.quiz-button {
+    background-color: #F2994B;
+    color: #102026;
+    padding: 20px 30px;
+    font-size: 25px; /* Tamanho da fonte dos botões do quiz */
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 60%;
+}
+
+.quiz-button:hover {
+    background-color: #A67C58;
+}
+
+#quiz-container {
+    margin-top: 30px;
+    background-color: #F2F2F2;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+form p {
+    margin-bottom: 20px;
+    font-size: 30px; /* Tamanho da fonte das perguntas do quiz */
+}
+
+#quiz-result {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 25px; /* Tamanho da fonte do resultado do quiz */
+}
+
+#module-content {
+    text-align: left;
+    margin-top: 20px;
+    line-height: 2.5; /* Ajuste para espaçamento entre as linhas */
+    font-size: 25px; /* Define o tamanho da fonte para 20px */
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 20px; /* Tamanho da fonte das perguntas do quiz */
+}

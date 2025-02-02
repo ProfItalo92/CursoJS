@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 6: Objetos e Arrays</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 6: Objetos e Arrays</h1>
+            <p>Vamos aprender sobre objetos e arrays em JavaScript!</p>
+        </div>
+        <div id="module-content">
+            <h3>Introdução aos Objetos e Arrays</h3>
+            <p>Objetos e arrays são dois dos tipos de dados mais importantes e usados no JavaScript. Eles permitem que você armazene e manipule dados de forma eficiente e flexível. Neste módulo, vamos aprender como usar objetos e arrays, suas diferenças, como acessá-los e manipulá-los, e como usá-los para resolver problemas do mundo real.</p>
+
+            <h3>1. Objetos em JavaScript</h3>
+            <p>Objetos são coleções de pares chave-valor. Em JavaScript, você pode definir um objeto utilizando chaves <code>{}</> e dentro delas, você coloca as propriedades e seus respectivos valores.</p>
+
+            <pre><code>
+                let pessoa = {
+                    nome: "João",
+                    idade: 30,
+                    profissao: "Programador"
+                };
+                console.log(pessoa.nome);  // Resultado: João
+            </code></pre>
+
+            <p>O exemplo acima define um objeto chamado <code>pessoa</code> com três propriedades: <code>nome</code>, <code>idade</code> e <code>profissao</code>. Para acessar uma propriedade do objeto, usamos a notação de ponto.</p>
+
+            <h4>Acessando Propriedades de Objetos</h4>
+            <pre><code>
+                let pessoa = {
+                    nome: "Maria",
+                    idade: 25,
+                    cidade: "São Paulo"
+                };
+                console.log(pessoa.idade);  // Resultado: 25
+                console.log(pessoa["cidade"]);  // Resultado: São Paulo
+            </code></pre>
+
+            <p>Além da notação de ponto, podemos acessar propriedades utilizando colchetes, o que é útil quando as propriedades têm nomes com espaços ou caracteres especiais.</p>
+
+            <h4>Métodos de Objetos</h4>
+            <p>Objetos também podem conter métodos, ou seja, funções que pertencem a um objeto.</p>
+
+            <pre><code>
+                let carro = {
+                    marca: "Toyota",
+                    modelo: "Corolla",
+                    mostrarInfo: function() {
+                        console.log(this.marca + " " + this.modelo);
+                    }
+                };
+                carro.mostrarInfo();  // Resultado: Toyota Corolla
+            </code></pre>
+
+            <h4>Objetos Aninhados</h4>
+            <p>Objetos podem conter outros objetos dentro deles. Isso permite criar estruturas de dados complexas.</p>
+
+            <pre><code>
+                let aluno = {
+                    nome: "Pedro",
+                    idade: 20,
+                    endereco: {
+                        rua: "Rua X",
+                        numero: 123
+                    }
+                };
+                console.log(aluno.endereco.rua);  // Resultado: Rua X
+            </code></pre>
+
+            <h3>2. Arrays em JavaScript</h3>
+            <p>Arrays são listas ordenadas de valores. Em JavaScript, você pode criar um array usando colchetes <code>[]</code>.</p>
+
+            <pre><code>
+                let numeros = [1, 2, 3, 4, 5];
+                console.log(numeros[0]);  // Resultado: 1
+            </code></pre>
+
+            <p>O array acima contém cinco números. A indexação começa em 0, ou seja, o primeiro elemento do array é acessado com o índice 0.</p>
+
+            <h4>Acessando Elementos de Arrays</h4>
+            <pre><code>
+                let frutas = ["maçã", "banana", "laranja"];
+                console.log(frutas[1]);  // Resultado: banana
+            </code></pre>
+
+            <h4>Métodos de Arrays</h4>
+            <p>Arrays têm muitos métodos úteis para manipulação, como <code>push()</code> para adicionar elementos ao final e <code>pop()</code> para remover o último elemento.</p>
+
+            <pre><code>
+                let numeros = [1, 2, 3];
+                numeros.push(4);  // Adiciona 4 ao final
+                console.log(numeros);  // Resultado: [1, 2, 3, 4]
+                numeros.pop();  // Remove o último elemento
+                console.log(numeros);  // Resultado: [1, 2, 3]
+            </code></pre>
+
+            <h4>Arrays Aninhados</h4>
+            <p>Arrays também podem conter outros arrays dentro deles, criando uma estrutura de dados multidimensional.</p>
+
+            <pre><code>
+                let matriz = [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ];
+                console.log(matriz[1][2]);  // Resultado: 6
+            </code></pre>
+
+            <h4>Iterando sobre Arrays</h4>
+            <p>Você pode usar loops para iterar sobre os elementos de um array. O laço <code>for</code> é muito útil para isso.</p>
+
+            <pre><code>
+                let frutas = ["maçã", "banana", "laranja"];
+                for (let i = 0; i < frutas.length; i++) {
+                    console.log(frutas[i]);
+                }
+            </code></pre>
+
+            <h3>3. Diferenças entre Objetos e Arrays</h3>
+            <p>Embora tanto objetos quanto arrays sejam usados para armazenar dados, eles têm diferenças significativas:</p>
+            <ul>
+                <li><b>Objetos:</b> São usados para armazenar dados de forma estruturada, usando pares chave-valor.</li>
+                <li><b>Arrays:</b> São usados para armazenar listas ordenadas de dados.</li>
+                <li><b>Objetos:</b> Permitem acessar valores através de chaves, que podem ser strings ou números.</li>
+                <li><b>Arrays:</b> Permitem acessar valores através de índices numéricos.</li>
+            </ul>
+
+            <h3>4. Exemplos Práticos</h3>
+            <p>Aqui estão alguns exemplos mais complexos de como usar objetos e arrays:</p>
+
+            <pre><code>
+                let aluno = {
+                    nome: "Maria",
+                    idade: 22,
+                    cursos: ["Matemática", "Física"],
+                    mostrarCursos: function() {
+                        console.log(this.cursos.join(", "));
+                    }
+                };
+                aluno.mostrarCursos();  // Resultado: Matemática, Física
+            </code></pre>
+
+            <pre><code>
+                let equipe = [
+                    { nome: "João", cargo: "Desenvolvedor" },
+                    { nome: "Ana", cargo: "Designer" },
+                    { nome: "Carlos", cargo: "Gerente" }
+                ];
+                for (let i = 0; i < equipe.length; i++) {
+                    console.log(equipe[i].nome + " é " + equipe[i].cargo);
+                }
+            </code></pre>
+
+            <h3>5. Desafios e Exercícios</h3>
+            <p>Agora, é hora de praticar! Resolva os seguintes desafios:</p>
+            <ul>
+                <li>Crie um objeto chamado "livro" com as propriedades "titulo", "autor" e "ano". Acesse essas propriedades e exiba-as no console.</li>
+                <li>Crie um array com os números de 1 a 10 e, utilizando um loop, imprima a soma de todos os números.</li>
+                <li>Crie um objeto que represente uma agenda de contatos, com propriedades como "nome", "telefone", e "email", e exiba as informações de um contato específico.</li>
+            </ul>
+
+            <h3>6. Conclusão</h3>
+            <p>Objetos e arrays são essenciais para trabalhar com dados estruturados em JavaScript. Agora que você tem uma boa compreensão de como utilizá-los, é hora de testar seu conhecimento com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 6</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Como acessar a propriedade de um objeto?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">usando índice</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">usando ponto ou colchetes</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">não é possível acessar</button>
+
+                <p>2. Qual a principal diferença entre objetos e arrays?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">Objetos são indexados por números, arrays por chaves</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">Arrays são indexados por números, objetos por chaves</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">Não há diferença entre eles</button>
+
+                <p>3. Como adicionar um novo elemento a um array?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">usando o método push()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">através da notação de colchetes</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">não é possível adicionar elementos a um array</button>
+
+                <p>4. O que é um array aninhado?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">um array dentro de outro array</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">um objeto dentro de um array</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">não existe esse conceito</button>
+
+                <p>5. Como iterar sobre os elementos de um array?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">usando o método map()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">usando um loop for</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">não é possível iterar sobre arrays</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo6.js"></script>
+</body>
+</html>

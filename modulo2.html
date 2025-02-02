@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Game - Módulo 2: Variáveis e Tipos de Dados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="header">
+            <h1>Bem-vindo ao Módulo 2: Variáveis e Tipos de Dados</h1>
+            <p>Vamos aprender sobre variáveis e tipos de dados no JavaScript!</p>
+        </div>
+        <div id="module-content">
+            <h3>Introdução às Variáveis e Tipos de Dados</h3>
+            <p>O conceito de variáveis e tipos de dados são fundamentais para qualquer linguagem de programação, e JavaScript não é diferente. As variáveis são "caixas" onde você pode armazenar valores, e os tipos de dados definem que tipo de valor pode ser armazenado. No JavaScript, você pode trabalhar com diversos tipos de dados, como números, textos, booleanos, arrays e objetos. Este módulo vai cobrir tudo isso com exemplos e explicações detalhadas.</p>
+
+            <h3>1. O que são Variáveis?</h3>
+            <p>Variáveis são fundamentais em programação. Elas permitem que você armazene valores, como números e textos, para usá-los posteriormente no seu código. Em JavaScript, você pode declarar variáveis de três formas:</p>
+            <ul>
+                <li><b>var:</b> Uma maneira antiga de declarar variáveis, mas com escopo global ou de função.</li>
+                <li><b>let:</b> Usado para declarar variáveis com escopo de bloco.</li>
+                <li><b>const:</b> Usado para declarar variáveis cujo valor não pode ser alterado.</li>
+            </ul>
+
+            <pre><code>
+                let idade = 30;  // Exemplo com let
+                const nome = "Maria";  // Exemplo com const
+                var ativo = true;  // Exemplo com var
+            </code></pre>
+
+            <h3>2. Tipos de Dados Primitivos</h3>
+            <p>Os tipos de dados primitivos são os mais simples no JavaScript e não podem ser alterados diretamente. São usados para armazenar valores simples, como números, texto e valores lógicos.</p>
+            <ul>
+                <li><b>Number:</b> Usado para números, tanto inteiros quanto decimais. Exemplo: <code>let x = 5.25;</code></li>
+                <li><b>String:</b> Usado para armazenar texto. Exemplo: <code>let nome = "João";</code></li>
+                <li><b>Boolean:</b> Usado para armazenar valores lógicos: <code>true</code> ou <code>false</code>.</li>
+                <li><b>Null:</b> Representa a ausência de valor ou objeto.</li>
+                <li><b>Undefined:</b> Usado para variáveis que foram declaradas, mas não inicializadas.</li>
+                <li><b>Symbol:</b> Tipo de dado único e imutável, usado principalmente para identificar propriedades de objetos.</li>
+            </ul>
+
+            <h4>Exemplo de Tipos de Dados Primitivos</h4>
+            <pre><code>
+                let numero = 42;           // Tipo Number
+                let texto = "Olá, Mundo";  // Tipo String
+                let ativo = true;          // Tipo Boolean
+                let vazio = null;          // Tipo Null
+                let indefinido;            // Tipo Undefined (não atribuído)
+            </code></pre>
+
+            <h3>3. Conversão de Tipos de Dados</h3>
+            <p>Às vezes, é necessário converter um tipo de dado para outro. O JavaScript oferece funções como <code>Number()</code>, <code>String()</code>, e <code>Boolean()</code> para realizar essas conversões.</p>
+            
+            <pre><code>
+                let numeroTexto = "123";
+                let numeroConvertido = Number(numeroTexto);  // Converte para Number
+                let booleano = Boolean("");  // Converte uma string vazia para false
+            </code></pre>
+
+            <h3>4. Arrays e Objetos</h3>
+            <p>Arrays e objetos são tipos de dados compostos em JavaScript. Eles podem armazenar múltiplos valores em uma única variável.</p>
+            <ul>
+                <li><b>Arrays:</b> Listas ordenadas de valores, acessados por um índice numérico.</li>
+                <li><b>Objetos:</b> Coleções de propriedades e valores, onde as propriedades são identificadas por chaves (strings).</li>
+            </ul>
+
+            <pre><code>
+                let numeros = [1, 2, 3, 4]; // Exemplo de Array
+                let pessoa = { nome: "João", idade: 25 }; // Exemplo de Objeto
+            </code></pre>
+
+            <h3>5. Trabalhando com Variáveis</h3>
+            <p>Em JavaScript, as variáveis podem ser manipuladas de diversas maneiras. A seguir estão exemplos de operações que podemos fazer com variáveis:</p>
+
+            <pre><code>
+                let x = 10;
+                let y = 5;
+                let soma = x + y;  // Soma
+                let produto = x * y;  // Multiplicação
+            </code></pre>
+
+            <h3>6. Escopo das Variáveis</h3>
+            <p>O escopo de uma variável define onde ela pode ser acessada dentro do código. As variáveis podem ter escopo global ou local, dependendo de onde são declaradas.</p>
+            <ul>
+                <li><b>Escopo Global:</b> A variável pode ser acessada em qualquer parte do código.</li>
+                <li><b>Escopo Local:</b> A variável só pode ser acessada dentro da função ou bloco onde foi declarada.</li>
+            </ul>
+
+            <h3>7. Conclusão</h3>
+            <p>Entender variáveis e tipos de dados é fundamental para programar em JavaScript. Com esses conhecimentos, você pode armazenar, manipular e trabalhar com dados de forma eficiente. Agora, é hora de testar o que você aprendeu com o quiz abaixo!</p>
+        </div>
+
+        <!-- Botão para Iniciar o Quiz -->
+        <button id="startQuizButton" class="next-button">Iniciar Quiz</button>
+
+        <div id="quiz-container" style="display: none;">
+            <h3>Quiz do Módulo 2</h3>
+            <p>Responda as perguntas abaixo:</p>
+            <form id="quizForm">
+                <p>1. Qual palavra-chave é usada para declarar uma variável cujo valor não pode ser alterado?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'a')">let</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'b')">var</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q1', 'c')">const</button>
+
+                <p>2. Qual é o tipo de dado usado para armazenar números no JavaScript?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'a')">String</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'b')">Boolean</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q2', 'c')">Number</button>
+
+                <p>3. Qual é o tipo de dado retornado quando tentamos acessar uma variável não definida?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'a')">null</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'b')">undefined</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q3', 'c')">NaN</button>
+
+                <p>4. Qual método converte um valor para booleano?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'a')">String()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'b')">Boolean()</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q4', 'c')">Number()</button>
+
+                <p>5. Qual é o valor de `Boolean("")`?</p>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'a')">true</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'b')">false</button>
+                <button type="button" class="quiz-button" onclick="selectAnswer('q5', 'c')">undefined</button>
+
+                <br>
+                <button type="button" onclick="submitQuiz()">Verificar Respostas</button>
+            </form>
+            <div id="quiz-result"></div>
+        </div>
+
+        <!-- Botão para o próximo módulo -->
+        <button id="nextModuleButton" class="next-button" style="display:none;" onclick="goToNextModule()">Próximo Módulo</button>
+    </div>
+
+    <script src="modulo2.js"></script>
+</body>
+</html>
